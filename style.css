@@ -7,12 +7,12 @@
 }
 
 :root {
-  --farve-primær: #1a1a2e;
-  --farve-sekundær: #16213e;
-  --farve-accent: #e94560;
+  --farve-primær: #2c2c2c;
+  --farve-sekundær: #414141;
+  --farve-accent: #36940bbb;
   --farve-tekst: #f0f0f0;
   --farve-tekst-dæmpet: #a0a0b0;
-  --farve-kort: #0f3460;
+  --farve-kort: #ded300;
   --skrift-overskrift: 'Capture_it', sans-serif;  
   --skrift-brød: 'Helvetica Neue', Arial, sans-serif;
   --afstand-s: 1rem;
