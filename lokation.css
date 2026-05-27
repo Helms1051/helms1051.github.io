@@ -1,0 +1,95 @@
+/* =====================
+   LOKATION SIDE
+   Bygger ovenpå style.css
+   ===================== */
+
+/* SIDE HEADER */
+.side-header {
+  text-align: center;
+  padding: 4rem 2rem 3rem;
+  background: linear-gradient(135deg, var(--farve-sekundær), var(--farve-primær));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.side-header h1 {
+  font-family: var(--skrift-overskrift);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: var(--farve-tekst);
+  margin-bottom: 0.5rem;
+}
+
+.side-header p {
+  color: var(--farve-tekst-dæmpet);
+  font-size: 1rem;
+}
+
+/* LAYOUT */
+.lokation-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* BILLEDE */
+.lokation-billede img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--skygge);
+  display: block;
+  object-fit: cover;
+  max-height: 420px;
+}
+
+/* INFO BOKS */
+.lokation-info h2 {
+  font-family: var(--skrift-overskrift);
+  font-size: 1.2rem;
+  color: var(--farve-accent);
+  margin-top: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.lokation-info h2:first-child {
+  margin-top: 0;
+}
+
+.lokation-info p {
+  color: var(--farve-tekst-dæmpet);
+  line-height: 1.8;
+}
+
+/* ÅBNINGSTIDER */
+.åbningstider {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.åbningstider li {
+  display: flex;
+  justify-content: space-between;
+  color: var(--farve-tekst-dæmpet);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 0.4rem;
+}
+
+.åbningstider li span:first-child {
+  color: var(--farve-tekst);
+}
+
+/* AKTIV NAVIGATION LINK */
+.nav-links a.aktiv {
+  color: var(--farve-accent);
+}
+
+/* RESPONSIVT */
+@media (max-width: 700px) {
+  .lokation-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
