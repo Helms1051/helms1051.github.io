@@ -1,6 +1,10 @@
 /* =====================
    CSS VARIABLER & RESET
    ===================== */
+@font-face {
+  font-family: 'Capture_it';
+  src: url('fonts/Capture_it.ttf') format('truetype');
+}
 
 :root {
   --farve-primær: #1a1a2e;
