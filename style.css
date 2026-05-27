@@ -1,0 +1,264 @@
+/* =====================
+   CSS VARIABLER & RESET
+   ===================== */
+
+:root {
+  --farve-primær: #1a1a2e;
+  --farve-sekundær: #16213e;
+  --farve-accent: #e94560;
+  --farve-tekst: #f0f0f0;
+  --farve-tekst-dæmpet: #a0a0b0;
+  --farve-kort: #0f3460;
+  --skrift-overskrift: 'Georgia', serif;
+  --skrift-brød: 'Helvetica Neue', Arial, sans-serif;
+  --afstand-s: 1rem;
+  --afstand-m: 2rem;
+  --afstand-l: 4rem;
+  --radius: 8px;
+  --skygge: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--skrift-brød);
+  background-color: var(--farve-primær);
+  color: var(--farve-tekst);
+  line-height: 1.7;
+}
+
+/* =====================
+   NAVIGATION
+   ===================== */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(26, 26, 46, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem var(--afstand-m);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--skrift-overskrift);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--farve-accent);
+  letter-spacing: 0.05em;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: var(--afstand-m);
+}
+
+.nav-links a {
+  color: var(--farve-tekst-dæmpet);
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--farve-accent);
+}
+
+/* =====================
+   HERO SEKTION
+   ===================== */
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--afstand-l) var(--afstand-m);
+  background: linear-gradient(135deg, var(--farve-primær) 0%, var(--farve-sekundær) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(233, 69, 96, 0.12) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 700px;
+}
+
+.hero-content h1 {
+  font-family: var(--skrift-overskrift);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  margin-bottom: var(--afstand-s);
+  color: var(--farve-tekst);
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  color: var(--farve-tekst-dæmpet);
+  margin-bottom: var(--afstand-m);
+}
+
+/* =====================
+   KNAP
+   ===================== */
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: var(--farve-accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #c73652;
+  transform: translateY(-2px);
+}
+
+/* =====================
+   GENERELLE SEKTIONER
+   ===================== */
+
+.section {
+  padding: var(--afstand-l) var(--afstand-m);
+  background-color: var(--farve-sekundær);
+}
+
+.section--alt {
+  background-color: var(--farve-primær);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-family: var(--skrift-overskrift);
+  font-size: 2rem;
+  margin-bottom: var(--afstand-s);
+  color: var(--farve-tekst);
+}
+
+.section p {
+  color: var(--farve-tekst-dæmpet);
+  max-width: 640px;
+  margin-bottom: var(--afstand-m);
+}
+
+/* =====================
+   KORT / CARDS
+   ===================== */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--afstand-s);
+  margin-top: var(--afstand-m);
+}
+
+.card {
+  background-color: var(--farve-kort);
+  border-radius: var(--radius);
+  padding: var(--afstand-m);
+  box-shadow: var(--skygge);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  font-family: var(--skrift-overskrift);
+  margin-bottom: 0.5rem;
+  color: var(--farve-accent);
+}
+
+.card p {
+  color: var(--farve-tekst-dæmpet);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* =====================
+   KONTAKT
+   ===================== */
+
+.contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: var(--farve-tekst-dæmpet);
+}
+
+/* =====================
+   FOOTER
+   ===================== */
+
+footer {
+  text-align: center;
+  padding: var(--afstand-m);
+  background-color: rgba(0, 0, 0, 0.3);
+  color: var(--farve-tekst-dæmpet);
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* =====================
+   RESPONSIVT
+   ===================== */
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .nav-links {
+    gap: var(--afstand-s);
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+}
